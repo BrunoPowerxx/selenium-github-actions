@@ -26,10 +26,6 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 driver.get('http://supabets.co.za')
 # Get the page source
 page_source = driver.page_source
-
-# Write the page source into a CSV file
-with open('page_source.csv', 'w', encoding='utf-8') as file:
-    file.write(page_source)
-
+print(page_source)
 # Close the WebDriver
 driver.quit()
