@@ -25,14 +25,23 @@ for option in options:
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('http://supabets.co.za')
-odd_type_element = driver.find_element(By.CLASS_NAME, 'oddType')
-odd_value_element = driver.find_element(By.CLASS_NAME, 'oddValue')
+#driver.get('http://supabets.co.za')
 
-odd_type = odd_type_element.text
-odd_value = odd_value_element.text
+# Find all elements with class name 'oddType'
+odd_type_elements = driver.find_elements(By.CLASS_NAME, 'oddType')
+# Find all elements with class name 'oddValue'
+odd_value_elements = driver.find_elements(By.CLASS_NAME, 'oddValue')
 
-print("Odd Type:", odd_type)
-print("Odd Value:", odd_value)
+# Iterate through each pair of elements and print their text
+for odd_type_element, odd_value_element in zip(odd_type_elements, odd_value_elements):
+    odd_type = odd_type_element.text
+    odd_value = odd_value_element.text
+    print("Odd Type:", odd_type)
+    print("Odd Value:", odd_value)
+
+# Close the WebDriver
+# driver.quit()
+
 
 # Close the WebDriver
 driver.quit()
