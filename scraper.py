@@ -24,8 +24,14 @@ for option in options:
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('http://supabets.co.za')
-# Get the page source
-page_source = driver.page_source
-print(page_source)
+odd_type_element = driver.find_element(By.CLASS_NAME, 'oddType')
+odd_value_element = driver.find_element(By.CLASS_NAME, 'oddValue')
+
+odd_type = odd_type_element.text
+odd_value = odd_value_element.text
+
+print("Odd Type:", odd_type)
+print("Odd Value:", odd_value)
+
 # Close the WebDriver
 driver.quit()
