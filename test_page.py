@@ -38,8 +38,8 @@ def test_scrape_odd_info():
     home_team_name_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.HOME_TEAM_NAME_SELECTOR)
     away_team_name_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.AWAY_TEAM_NAME_SELECTOR)
     market_type_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.MARKET_TYPE_SELECTOR)
-    odd_type_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.ODD_TYPE_SELECTOR)
-    odd_value_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.ODD_VALUE_SELECTOR)
+    odd_type_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.ODDS_TYPE_SELECTOR)
+    odd_value_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.ODDS_VALUE_SELECTOR)
 
     sport_name = sport_name_element.text
     league_name = league_name_element.text
