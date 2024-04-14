@@ -30,7 +30,7 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 #testlogic
 
-def test_scrape_odd_info(driver):
+def test_scrape_odd_info():
     driver.get(SupabetsPageLocators.URL)
 
     sport_name_element = driver.find_element(By.CSS_SELECTOR, SupabetsPageLocators.SPORT_NAME_SELECTOR)
