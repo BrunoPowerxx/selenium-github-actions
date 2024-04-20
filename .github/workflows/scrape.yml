@@ -21,7 +21,7 @@ jobs:
         run: sudo apt install -y chromium-browser
       - name: Install all necessary packages
         run: pip install requests beautifulsoup4 pandas webdriver-manager pytest selenium
-      - name: Run geturl script
-        run: python geturl.py
-#      - name: Run tests
-#        run: pytest
+      - name: Get Chromium version
+        run: chromium-browser --version
+#      - name: Run geturl script
+#        run: python geturl.py
