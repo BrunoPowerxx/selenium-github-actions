@@ -1,0 +1,18 @@
+name: Scraping and Surebet Calculation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  scrape_and_calculate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Fetch data using curl
+        run: |
+          curl "https://api.scraperapi.com?api_key=6c5163eb4919d0fff31be452e19ab232&url=https://supabets.co.za&render=True&timeout=120000&autoparse=True" > scraped_data.txt
